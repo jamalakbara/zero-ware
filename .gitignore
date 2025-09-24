@@ -40,3 +40,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Database development/testing scripts
+add-custom-user-data.js
+add-data-existing-user.js
+add-sample-data-simple.js
+add-sample-data.js
+add-user-credentials.js
+create-db.js
+test-db-connection.js
+test-mysql.js
+
+# Temporary/unstable migration files (optional)
+# drizzle/0000_illegal_la_nuit.sql
+# drizzle/0001_misty_absorbing_man.sql
+# drizzle/0002_gifted_madame_web.sql

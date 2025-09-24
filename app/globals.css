@@ -121,3 +121,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Custom cursor styles for buttons and clickable elements */
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  button, [role="button"], a, .clickable {
+    cursor: pointer;
+  }
+  
+  button:hover, [role="button"]:hover, a:hover, .clickable:hover {
+    cursor: pointer;
+  }
+  
+  button:disabled, [role="button"][aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}

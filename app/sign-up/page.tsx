@@ -72,7 +72,7 @@ export default function SignUpPage() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-background px-4 py-8">
-            <Card className="w-full max-w-md">
+            <Card className="w-full max-w-md cursor-pointer">
                 <CardHeader className="text-center">
                     <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
                     <CardDescription>
@@ -144,7 +144,7 @@ export default function SignUpPage() {
                                                     type="button"
                                                     variant="ghost"
                                                     size="sm"
-                                                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                                                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent cursor-pointer"
                                                     onClick={() => setShowPassword(!showPassword)}
                                                     disabled={isLoading}
                                                 >
@@ -180,7 +180,7 @@ export default function SignUpPage() {
                                                     type="button"
                                                     variant="ghost"
                                                     size="sm"
-                                                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                                                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent cursor-pointer"
                                                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                                     disabled={isLoading}
                                                 >
@@ -197,7 +197,7 @@ export default function SignUpPage() {
                                 )}
                             />
 
-                            <Button type="submit" className="w-full" disabled={isLoading}>
+                            <Button type="submit" className="w-full cursor-pointer" disabled={isLoading}>
                                 {isLoading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />

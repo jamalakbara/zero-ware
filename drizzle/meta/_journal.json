@@ -1,12 +1,26 @@
 {
   "version": "7",
-  "dialect": "postgresql",
+  "dialect": "mysql",
   "entries": [
     {
       "idx": 0,
-      "version": "7",
-      "when": 1756202589329,
-      "tag": "0000_overjoyed_morlun",
+      "version": "5",
+      "when": 1758725273899,
+      "tag": "0000_illegal_la_nuit",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1758725461796,
+      "tag": "0001_misty_absorbing_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1758725670749,
+      "tag": "0002_gifted_madame_web",
       "breakpoints": true
     }
   ]

@@ -43,7 +43,7 @@ export default function SignInPage() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-background px-4">
-            <Card className="w-full max-w-md">
+            <Card className="w-full max-w-md cursor-pointer">
                 <CardHeader className="text-center">
                     <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
                     <CardDescription>
@@ -81,7 +81,7 @@ export default function SignInPage() {
                                 disabled={isLoading}
                             />
                         </div>
-                        <Button type="submit" className="w-full" disabled={isLoading}>
+                        <Button type="submit" className="w-full cursor-pointer" disabled={isLoading}>
                             {isLoading ? (
                                 <>
                                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

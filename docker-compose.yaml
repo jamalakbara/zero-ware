@@ -1,20 +1,21 @@
 version: '3.8'
 
 services:
-  # PostgreSQL Database
-  postgres:
-    image: postgres:16-alpine
-    container_name: codeguide-starter-fullstack-postgres
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: codeguide-starter-fullstack-mysql
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-zeroware}
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password --skip-password-validation
     networks:
       - codeguide-starter-fullstack-network
 
@@ -33,32 +34,33 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
+      - mysql
     networks:
       - codeguide-starter-fullstack-network
 
   # Development database only
-  postgres-dev:
-    image: postgres:16-alpine
-    container_name: codeguide-starter-fullstack-postgres-dev
+  mysql-dev:
+    image: mysql:8.0
+    container_name: codeguide-starter-fullstack-mysql-dev
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-postgres}
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-zeroware_dev}
     ports:
-      - "5433:5432"
+      - "3307:3306"
     volumes:
-      - postgres_dev_data:/var/lib/postgresql/data
+      - mysql_dev_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --skip-password-validation
     networks:
       - codeguide-starter-fullstack-network
     profiles:
       - dev
 
 volumes:
-  postgres_data:
+  mysql_data:
     driver: local
-  postgres_dev_data:
+  mysql_dev_data:
     driver: local
 
 networks:

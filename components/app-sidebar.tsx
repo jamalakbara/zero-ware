@@ -39,109 +39,104 @@ const staticData = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "Studies",
+      url: "/studies",
       icon: IconListDetails,
     },
     {
       title: "Analytics",
-      url: "#",
+      url: "/analytics",
       icon: IconChartBar,
     },
     {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
+      title: "Reports",
+      url: "/reports",
+      icon: IconReport,
     },
     {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
+      title: "Settings",
+      url: "/settings",
+      icon: IconSettings,
     },
   ],
   navClouds: [
     {
-      title: "Capture",
-      icon: IconCamera,
+      title: "S1 Data",
+      icon: IconDatabase,
       isActive: true,
-      url: "#",
+      url: "/data/s1",
       items: [
         {
-          title: "Active Proposals",
-          url: "#",
+          title: "Loss Categories",
+          url: "/data/s1/categories",
         },
         {
-          title: "Archived",
-          url: "#",
+          title: "Downtime Analysis",
+          url: "/data/s1/analysis",
         },
       ],
     },
     {
-      title: "Proposal",
-      icon: IconFileDescription,
-      url: "#",
+      title: "CT Data",
+      icon: IconChartBar,
+      url: "/data/ct",
       items: [
         {
-          title: "Active Proposals",
-          url: "#",
+          title: "Cycle Time",
+          url: "/data/ct/cycles",
         },
         {
-          title: "Archived",
-          url: "#",
+          title: "Efficiency",
+          url: "/data/ct/efficiency",
         },
       ],
     },
     {
-      title: "Prompts",
-      icon: IconFileAi,
-      url: "#",
+      title: "Piece Counters",
+      icon: IconCamera,
+      url: "/data/pieces",
       items: [
         {
-          title: "Active Proposals",
-          url: "#",
+          title: "Production Count",
+          url: "/data/pieces/production",
         },
         {
-          title: "Archived",
-          url: "#",
+          title: "Quality Metrics",
+          url: "/data/pieces/quality",
         },
       ],
     },
   ],
   navSecondary: [
     {
-      title: "Settings",
-      url: "#",
-      icon: IconSettings,
-    },
-    {
-      title: "Get Help",
-      url: "#",
+      title: "Help & Support",
+      url: "/help",
       icon: IconHelp,
     },
     {
       title: "Search",
-      url: "#",
+      url: "/search",
       icon: IconSearch,
     },
   ],
   documents: [
     {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
+      name: "Zero Loss Guide",
+      url: "/docs/zero-loss",
+      icon: IconFileDescription,
     },
     {
-      name: "Reports",
-      url: "#",
-      icon: IconReport,
+      name: "Pareto Analysis",
+      url: "/docs/pareto",
+      icon: IconFileAi,
     },
     {
-      name: "Word Assistant",
-      url: "#",
+      name: "OEE Metrics",
+      url: "/docs/oee",
       icon: IconFileWord,
     },
   ],
@@ -169,9 +164,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <Link href="/">
-                <Image src="/codeguide-logo.png" alt="CodeGuide" width={32} height={32} className="rounded-lg" />
-                <span className="text-base font-semibold font-parkinsans">CodeGuide</span>
+              <Link href="/dashboard">
+                <Image src="/codeguide-logo.png" alt="ZeroWare" width={32} height={32} className="rounded-lg" />
+                <span className="text-base font-semibold font-parkinsans">ZeroWare</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
